@@ -58,6 +58,8 @@
             window.addEventListener('message', (e) => {
               if (e.data?.type === 'PLAY') {
                 audioElement.play().catch(err => console.warn('play failed:', err))
+                const playButton = document.querySelector('button')
+                playButton.remove()
               }
             })
         </script>
