@@ -54,6 +54,12 @@
                     playButton.remove()
                 })
             }
+
+            window.addEventListener('message', (e) => {
+              if (e.data?.type === 'PLAY') {
+                audioElement.play().catch(err => console.warn('play failed:', err))
+              }
+            })
         </script>
     </body>
 </html>
